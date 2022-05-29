@@ -6,9 +6,8 @@
 2、配置nginx的tcp负载均衡：在conf目录里配置nginx.conf文件：
   stream {
     upstream MyServer {
-      server <ip>:<port> weight = 1 max fails = 3 fail_timeout = 30s;
-      ...
-  
+      server <ip>:<port> weight = 1 max fails = 3 fail_timeout = 30s; #添加多台服务器
+      .......
     }
     server {
       proxy_connect_timeout 1s;
